@@ -1,0 +1,21 @@
+ScreenManager:
+    GenerationScreen:
+
+<GenerationScreen>
+    name: 'main_screen'
+    BoxLayout:
+        orientation: 'vertical'
+        MDToolbar:
+            title: 'Random number generator'
+            pos_hint: {'center_x': 1, 'center_y': 1}
+
+        MDLabel:
+            text: ''
+            id: number_label
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            style: 'H5'
+        
+        MDRectangleFlatButton:
+            text: 'Generate number'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            on_press: root.generate_number()
