@@ -1,8 +1,37 @@
 ScreenManager:
+    MainScreen:
     GenerationScreen:
 
-<GenerationScreen>
+<MainScreen>:
     name: 'main_screen'
+    BoxLayout:
+        orientation: 'vertical'
+        MDBoxLayout:
+            adaptive_height: True
+            orientation: 'vertical'
+            MDToolbar:
+                title: 'Random number generator'
+
+        FloatLayout:
+            MDTextField:
+                id: min_random_value
+                hint_text: 'Give min value'
+                pos_hint: {'center_x': 0.5, 'center_y': 0.7}
+                size_hint_x: None
+                width: 300
+            MDTextField:
+                id: max_random_value
+                hint_text: 'Give max value'
+                pos_hint: {'center_x': 0.5, 'center_y': 0.6}
+                size_hint_x: None
+                width: 300
+            MDRectangleFlatButton:
+                text: 'Go to generation screen'
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                on_release: root.accept_input(min_random_value.text, max_random_value.text, root)
+
+<GenerationScreen>
+    name: 'generation_screen'
     BoxLayout:
         orientation: 'vertical'
         MDBoxLayout:
@@ -22,3 +51,8 @@ ScreenManager:
                 text: 'Generate number'
                 pos_hint: {'center_x': 0.5, 'center_y': 0.4}
                 on_press: root.generate_number()
+
+            MDRectangleFlatButton:
+                text: 'Go back'
+                pos_hint: {'center_x': 0.5, 'center_y': 0.3}
+                on_press: root.manager.current = 'main_screen'
