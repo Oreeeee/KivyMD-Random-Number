@@ -1,1 +1,9 @@
+# Python venv
 .venv/
+
+# Pycache
+__pycache__/
+
+# Buildozer stuff
+.buildozer/
+bin/
