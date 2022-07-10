@@ -7,7 +7,7 @@ title = KivyMD Random Number
 package.name = kivymd_random_number
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = com.oreeeee.kivymd_random_number
+package.domain = com.oreeeee
 
 # (str) Source code where the main.py live
 source.dir = .
@@ -22,7 +22,7 @@ source.include_exts = py,kv
 #source.exclude_exts = spec
 
 # (list) List of directory to exclude (let empty to not exclude anything)
-#source.exclude_dirs = tests, bin, venv
+source.exclude_dirs = bin, .venv, .buildozer
 
 # (list) List of exclusions using pattern matching
 # Do not prefix with './'
@@ -47,7 +47,7 @@ requirements = python3,kivy,kivymd,pillow
 #presplash.filename = %(source.dir)s/data/presplash.png
 
 # (str) Icon of the application
-#icon.filename = %(source.dir)s/data/icon.png
+icon.filename = ./assets/icon.png
 
 # (str) Supported orientation (one of landscape, sensorLandscape, portrait or all)
 orientation = portrait

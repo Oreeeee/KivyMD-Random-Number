@@ -10,7 +10,6 @@ class GenerationScreen(KivyScreen):
     def generate_number(self):
         random_number = random.randrange(1, 100)
         self.manager.get_screen("main_screen").ids.number_label.text = f"Your random number is: {random_number}"
-        print(random_number)
 
 # Initialize ScreenManager and add GenerationScreen to that ScreenManager
 sm = KivyScreenManager()
